@@ -4,9 +4,8 @@ import java.util.*;
 
 public class ArmstrongNumberClass {
 	
-	// Creating a Singleton Class
+	// Singleton Class
 	// So that we don't need to create a new object
-	// when we need to compute 
 	// Clean Code
 	private static ArmstrongNumberClass instance = null;
 	Stack<Integer> digitStack = new Stack<Integer>();
@@ -84,11 +83,13 @@ public class ArmstrongNumberClass {
 
 		if(finalValue == _value) {
 			System.out.println("It is an Armstrong Number");
-		return true;}
+		return true;
+		}
 		else {
 			System.out.println("It is not an Armstrong Number");
 		return false;
-	}}
+	}
+		}
 	
 	
 	// Algorithm
