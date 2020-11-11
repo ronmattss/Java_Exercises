@@ -39,4 +39,9 @@ class ArmstrongNumberTest {
 	{
 		assertFalse(ArmstrongNumberClass.getInstance().checkIfArmstrongNumber(1632));
 	}
+	@Test
+	void test6()
+	{
+		assertTrue(ArmstrongNumberClass.getInstance().checkIfArmstrongNumber(54748));
+	}
 }
