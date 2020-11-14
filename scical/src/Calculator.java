@@ -59,7 +59,7 @@ public class Calculator {
         }
         @Override
         public void actionPerformed(ActionEvent e) {
-        textArea.setText(textArea.getText()+" "+val);
+        textArea.setText(textArea.getText()+""+val);
         }
     }
     private class EqualsClicked implements ActionListener

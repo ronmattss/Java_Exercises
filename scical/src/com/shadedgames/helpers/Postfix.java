@@ -1,5 +1,6 @@
 package com.shadedgames.helpers;
 
+import java.util.ArrayList;
 import java.util.Stack;
 
 public class Postfix {
@@ -82,19 +83,39 @@ public class Postfix {
             // Current token is a whitespace, skip it
             if (tokens[i] == ' ')
                 continue;
-
-            // Current token is a number, push it to stack for numbers
-            if (tokens[i] >= '0' && tokens[i] <= '9')
+            if(Character.isDigit(tokens[i]))
             {
                 StringBuffer sbuf = new StringBuffer();
+                ArrayList<Character> digChar = new ArrayList<Character>();
+                int j = i;
+                while (j < tokens.length && Character.isDigit(tokens[j]))
+                {
+                    sbuf.append(tokens[j++]);
+                    System.out.println(" sbuf: "+sbuf.length() + " "+ sbuf.toString()+" ListLength: "+ digChar.size() + "current index; "+j);
+                }
+
+                System.out.println("when this happened counters j i " + j+ " " + i);
+                digits.push(Integer.parseInt(sbuf.toString()));
+                i=--j;
+            }
+            // Current token is a number, push it to stack for numbers
+           /* if (tokens[i] >= '0' && tokens[i] <= '9')
+            {
+                StringBuffer sbuf = new StringBuffer();
+                ArrayList<Character> digChar = new ArrayList<Character>();
                 // There may be more than one digits in number
                 int j = i;
-                while (j < tokens.length && tokens[j] >= '0' && tokens[j] <= '9') {
+                while (j < tokens.length && Character.isDigit(tokens[j])) {
+                    var x = tokens[j];
+                    digChar.add(x);
+                    sbuf.append(x);
 
-                    sbuf.append(tokens[j++]);
+                    j++;
                 }
+                i=j;
+                System.out.println("when this happened counters j i " + j+ " " + i);
                 digits.push(Integer.parseInt(sbuf.toString()));
-            }
+            }*/
 
             // Current token is an opening brace, push it to 'ops'
             else if (tokens[i] == '(')
