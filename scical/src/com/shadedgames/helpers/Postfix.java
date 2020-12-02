@@ -6,7 +6,7 @@ import java.util.Stack;
 public class Postfix {
 
     //check the operators precedence
-    int precedence(char ch)
+/*    int precedence(char ch)
     {
         return switch (ch) {
             case '+', '-' -> 1;
@@ -15,9 +15,9 @@ public class Postfix {
             default -> -1;
         };
         // return -1 if it is an invalid operator
-    }
+    }*/
 
-    public String infixToPostfix (String exp)
+/*    public String infixToPostfix (String exp)
     {
         String result = "";
 
@@ -64,7 +64,7 @@ public class Postfix {
             result += stack.pop();
         }
         return result;
-    }
+    }*/
 
 
     public int evaluate (String exp)
@@ -133,39 +133,62 @@ public class Postfix {
 
         return digits.pop();
     }
-    public int evaluateObjectList (String exp)
+
+    // Workaround so that it can accept negative values
+    // this method originally only accepts positive ints
+    // Workaround is to create an ArrayList<Object> :)
+    public double evaluateObjectList (ArrayList<Object> listBasedExpression)
     {
         // tokens are the operands and operators
-        char[] tokens = exp.toCharArray();
+
+        ArrayList<Object> listOfObjects = listBasedExpression;
        // ArrayList<Object> tokenList = exp;
         // Stack for digits
-        Stack<Integer> digits = new Stack<Integer>();
+        Stack<Double> digits = new Stack<Double>();
 
         // Stack for Operators
         Stack<Character> ops = new Stack<Character>();
 
-        //region Expression Reading
-        for (int i = 0; i < tokens.length; i++)
+        //region Expression
+
+        for(int i=0; i<listOfObjects.size(); i++)
+        {
+            // if Current TokenIndex is a Digit
+            if(listOfObjects.get(i)instanceof Double ||listOfObjects.get(i)instanceof Integer)
+            {
+                digits.push((Double) listOfObjects.get(i));
+            }
+            // for sure it is a string lmao
+            else if(listOfObjects.get(i)instanceof String)
+            { String operator = listOfObjects.get(i).toString();
+                if(operator == "(")
+                {
+                    ops.push(operator.charAt(0));
+                }
+                else if(operator == ")")
+                {
+                    while(ops.peek()!= '(')
+                        digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+                    ops.pop();
+                }
+                else if (operator == "^" || operator == "+" || operator == "-" || operator == "*" || operator == "/")
+                {
+
+                    while (!ops.empty() && hasPrecedence(operator.charAt(0), ops.peek())) {
+                        digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+                    }
+
+                    ops.push(operator.charAt(0));
+                }
+            }
+        }
+        while (!ops.empty())
+            digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+        return digits.pop();
+/*        for (int i = 0; i < tokens.length; i++)
         {
           //  if(tokenList.get(i)instanceof Integer)
             // Current token is a whitespace, skip it
-            if (tokens[i] == ' ')
-                continue;
-            if(Character.isDigit(tokens[i]))    // IF current token is a digit then process it
-            {
-                StringBuffer sbuf = new StringBuffer();
-                ArrayList<Character> digChar = new ArrayList<Character>();
-                int j = i;
-                while (j < tokens.length && Character.isDigit(tokens[j]))
-                {
-                    sbuf.append(tokens[j++]);
-                    System.out.println(" sbuf: "+sbuf.length() + " "+ sbuf.toString()+" ListLength: "+ digChar.size() + "current index; "+j);
-                }
-
-                System.out.println("when this happened counters j i " + j+ " " + i);
-                digits.push(Integer.parseInt(sbuf.toString()));
-                i=--j;
-            }
 
             // Current token is an opening brace, push it to 'ops'
             else if (tokens[i] == '(')
@@ -198,7 +221,7 @@ public class Postfix {
             digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
 
 
-        return digits.pop();
+        return digits.pop();*/
     }
     // Returns true if 'op2' has higher or same precedence as 'op1',
     // otherwise returns false.
@@ -216,6 +239,26 @@ public class Postfix {
 
     //  method to apply an operator 'op' on operands 'a'
     // and 'b'. Return the result.
+    public static double applyOp(char op, double b, double a)
+    {
+        switch (op)
+        {
+            case '+':
+                return a + b;
+            case '^':
+                return Math.pow(a, b);
+            case '-':
+                return a - b;
+            case '*':
+                return a * b;
+            case '/':
+                if (b == 0)
+                    throw new
+                            UnsupportedOperationException("Cannot divide by zero");
+                return a / b;
+        }
+        return 0;
+    }
     public static int applyOp(char op, int b, int a)
     {
         switch (op)
@@ -236,5 +279,4 @@ public class Postfix {
         }
         return 0;
     }
-
 }

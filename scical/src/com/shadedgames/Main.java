@@ -10,17 +10,28 @@ public class Main {
         // weeee main calculator entry point
         //TODO: Do App Dev Requirements
         // manual input of digits and operands.
+        // Requirements:
+        /*
+        * number of inputs range from 2 - 10
+        * operation depends on number of inputs
+        * + and - values int double is accepted
+        * other inputs aside from operators and operands are considered Invalid Input
+        * Follow MDAS Rule 
+        * */
 
-        Stack<Object> isThisEvenLegal = new Stack<>();
-        isThisEvenLegal.add(1);
-        isThisEvenLegal.add("1");
-        isThisEvenLegal.add(1.00);
+
         ArrayList<Object> isSthisLegal = new ArrayList<Object>();
 
-        isSthisLegal.add(1.00);
-        isSthisLegal.add("+");
         isSthisLegal.add(-1.00);
-
+        isSthisLegal.add("-");
+        isSthisLegal.add(-2.00);
+        isSthisLegal.add("-");
+        isSthisLegal.add(-2.00);
+        isSthisLegal.add("-");
+        isSthisLegal.add(-2.00);
+        isSthisLegal.add("-");
+        isSthisLegal.add(2.00);
+        // SO THIS IS LEGAL HAHAHAHA
         for (int i = 0; i < isSthisLegal.size(); i++) {
             if (isSthisLegal.get(i) instanceof Double)
                 System.out.println(isSthisLegal.get(i).toString() + " this is an Integer");
@@ -28,6 +39,12 @@ public class Main {
                 System.out.println(isSthisLegal.get(i).toString() + " this is a String");
             }
         }
+        for (int i = 0; i<isSthisLegal.size();i++)
+        {
+            System.out.print(isSthisLegal.get(i).toString() + " ");
+        }
+        Postfix pf = new Postfix();
+        System.out.println("Result: "+pf.evaluateObjectList(isSthisLegal));
 
        /* System.out.println("Enter an Expression: ");
         Scanner sc = new Scanner(System.in);
