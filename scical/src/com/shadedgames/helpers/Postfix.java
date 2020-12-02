@@ -78,12 +78,13 @@ public class Postfix {
         // Stack for Operators
         Stack<Character> ops = new Stack<Character>();
 
+        //region Expression Reading
         for (int i = 0; i < tokens.length; i++)
         {
             // Current token is a whitespace, skip it
             if (tokens[i] == ' ')
                 continue;
-            if(Character.isDigit(tokens[i]))
+            if(Character.isDigit(tokens[i]))    // IF current token is a digit then process it
             {
                 StringBuffer sbuf = new StringBuffer();
                 ArrayList<Character> digChar = new ArrayList<Character>();
@@ -98,30 +99,13 @@ public class Postfix {
                 digits.push(Integer.parseInt(sbuf.toString()));
                 i=--j;
             }
-            // Current token is a number, push it to stack for numbers
-           /* if (tokens[i] >= '0' && tokens[i] <= '9')
-            {
-                StringBuffer sbuf = new StringBuffer();
-                ArrayList<Character> digChar = new ArrayList<Character>();
-                // There may be more than one digits in number
-                int j = i;
-                while (j < tokens.length && Character.isDigit(tokens[j])) {
-                    var x = tokens[j];
-                    digChar.add(x);
-                    sbuf.append(x);
-
-                    j++;
-                }
-                i=j;
-                System.out.println("when this happened counters j i " + j+ " " + i);
-                digits.push(Integer.parseInt(sbuf.toString()));
-            }*/
 
             // Current token is an opening brace, push it to 'ops'
             else if (tokens[i] == '(')
                 ops.push(tokens[i]);
 
                 // Closing brace encountered, solve entire brace
+                // Solve all terms inside a brace
             else if (tokens[i] == ')')
             {
                 while (ops.peek() != '(')
@@ -133,21 +117,89 @@ public class Postfix {
             else if (tokens[i] == '^' || tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/')
             {
 
-                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek()))
+                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
                     digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+                }
 
                 ops.push(tokens[i]);
             }
         }
+        //endregion
 
-
+        // Do remaining operations
         while (!ops.empty())
             digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
 
 
         return digits.pop();
     }
+    public int evaluateObjectList (String exp)
+    {
+        // tokens are the operands and operators
+        char[] tokens = exp.toCharArray();
+       // ArrayList<Object> tokenList = exp;
+        // Stack for digits
+        Stack<Integer> digits = new Stack<Integer>();
 
+        // Stack for Operators
+        Stack<Character> ops = new Stack<Character>();
+
+        //region Expression Reading
+        for (int i = 0; i < tokens.length; i++)
+        {
+          //  if(tokenList.get(i)instanceof Integer)
+            // Current token is a whitespace, skip it
+            if (tokens[i] == ' ')
+                continue;
+            if(Character.isDigit(tokens[i]))    // IF current token is a digit then process it
+            {
+                StringBuffer sbuf = new StringBuffer();
+                ArrayList<Character> digChar = new ArrayList<Character>();
+                int j = i;
+                while (j < tokens.length && Character.isDigit(tokens[j]))
+                {
+                    sbuf.append(tokens[j++]);
+                    System.out.println(" sbuf: "+sbuf.length() + " "+ sbuf.toString()+" ListLength: "+ digChar.size() + "current index; "+j);
+                }
+
+                System.out.println("when this happened counters j i " + j+ " " + i);
+                digits.push(Integer.parseInt(sbuf.toString()));
+                i=--j;
+            }
+
+            // Current token is an opening brace, push it to 'ops'
+            else if (tokens[i] == '(')
+                ops.push(tokens[i]);
+
+                // Closing brace encountered, solve entire brace
+                // Solve all terms inside a brace
+            else if (tokens[i] == ')')
+            {
+                while (ops.peek() != '(')
+                    digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+                ops.pop();
+            }
+
+            // Current token is an operator.
+            else if (tokens[i] == '^' || tokens[i] == '+' || tokens[i] == '-' || tokens[i] == '*' || tokens[i] == '/')
+            {
+
+                while (!ops.empty() && hasPrecedence(tokens[i], ops.peek())) {
+                    digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+                }
+
+                ops.push(tokens[i]);
+            }
+        }
+        //endregion
+
+        // Do remaining operations
+        while (!ops.empty())
+            digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
+
+
+        return digits.pop();
+    }
     // Returns true if 'op2' has higher or same precedence as 'op1',
     // otherwise returns false.
     public static boolean hasPrecedence(char op1, char op2)

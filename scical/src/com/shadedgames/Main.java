@@ -7,8 +7,29 @@ import java.util.*;
 public class Main {
 
     public static void main(String[] args) {
-	// weeee main calculator entry point
-        System.out.println("Enter an Expression: ");
+        // weeee main calculator entry point
+        //TODO: Do App Dev Requirements
+        // manual input of digits and operands.
+
+        Stack<Object> isThisEvenLegal = new Stack<>();
+        isThisEvenLegal.add(1);
+        isThisEvenLegal.add("1");
+        isThisEvenLegal.add(1.00);
+        ArrayList<Object> isSthisLegal = new ArrayList<Object>();
+
+        isSthisLegal.add(1.00);
+        isSthisLegal.add("+");
+        isSthisLegal.add(-1.00);
+
+        for (int i = 0; i < isSthisLegal.size(); i++) {
+            if (isSthisLegal.get(i) instanceof Double)
+                System.out.println(isSthisLegal.get(i).toString() + " this is an Integer");
+            else {
+                System.out.println(isSthisLegal.get(i).toString() + " this is a String");
+            }
+        }
+
+       /* System.out.println("Enter an Expression: ");
         Scanner sc = new Scanner(System.in);
         boolean choice = true;
         while(choice) {
@@ -30,5 +51,6 @@ public class Main {
 
         }
         sc.close();
+    }*/
     }
 }
