@@ -1,9 +1,8 @@
-package exercise1;
+package labexercise1;
 
 import java.util.*;
 
-import exercise1.models.ArmstrongNumber;
-import org.junit.platform.commons.util.StringUtils;
+import labexercise1.models.ArmstrongNumber;
 
 public class Main {
 
@@ -30,8 +29,7 @@ public class Main {
                 if (input.charAt(0) == '-' || !tryParseInt(input)) {
                     throw new InvalidInputException("InvalidInput");
                 } else {
-                    System.out.println("type: y to follow IM requirement else algorithm will follow Wolfram Rule");
-                    System.out.println(ArmstrongNumber.getInstance().checkIfArmstrongNumber(Integer.parseInt(input),userInput.next().equalsIgnoreCase("y")));
+                   ArmstrongNumber.getInstance().checkIfArmstrongNumber(Integer.parseInt(input));
                 }
             } catch (Exception e) {
                 System.out.println("Invalid Input");

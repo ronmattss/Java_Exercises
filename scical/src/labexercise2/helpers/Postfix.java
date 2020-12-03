@@ -1,11 +1,11 @@
-package com.shadedgames.helpers;
+package labexercise2.helpers;
 
 import java.util.ArrayList;
 import java.util.Stack;
 
 public class Postfix {
 
-
+    // Using stack and converting it to postfix notation to follow MDAS Rule
     // Workaround so that it can accept negative values
     // this method originally only accepts positive ints
     // Workaround is to create an ArrayList<Object> :)
@@ -31,16 +31,8 @@ public class Postfix {
             else if (listOfObjects.get(i) instanceof String) {
                 String operator = listOfObjects.get(i).toString();
                 // if it is a ( push it in the stack
-                if (operator == "(") {
-                    ops.push(operator.charAt(0));
-                }
-                else if (operator == ")") // if it is a ) then solve inner operations While not encountering a (
-                {
-                    while (ops.peek() != '(')
-                        digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
-                    ops.pop();
-                } else if (operator.equalsIgnoreCase("^") || operator.equalsIgnoreCase("+") || operator.equalsIgnoreCase("-") || operator.equalsIgnoreCase("*") || operator.equalsIgnoreCase("/")) {
 
+                 if (operator.equalsIgnoreCase("^") || operator.equalsIgnoreCase("+") || operator.equalsIgnoreCase("-") || operator.equalsIgnoreCase("*") || operator.equalsIgnoreCase("/")) {
                     while (!ops.empty() && hasPrecedence(operator.charAt(0), ops.peek())) {
                         digits.push(applyOp(ops.pop(), digits.pop(), digits.pop()));
                     }
@@ -59,10 +51,6 @@ public class Postfix {
     // Returns true if 'op2' has higher or same precedence as 'op1',
     // otherwise returns false.
     public static boolean hasPrecedence(char op1, char op2) {
-        if (op2 == '(' || op2 == ')')
-            return false;
-        if (op1 == '^')
-            return false;
         if ((op1 == '*' || op1 == '/') && (op2 == '+' || op2 == '-'))
             return false;
         else

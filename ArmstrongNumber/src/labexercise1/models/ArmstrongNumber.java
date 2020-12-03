@@ -1,4 +1,4 @@
-package exercise1.models;
+package labexercise1.models;
 
 import java.util.*;
 
@@ -38,7 +38,7 @@ public class ArmstrongNumber {
 	{
 		return _value % 10;
 	}     // this function just returns the value of a given digit
-
+	// get length of the digit // used if power is raised by digit length
 	private int findOrderLength()
 	{
 		return digitStack.size();
@@ -67,11 +67,11 @@ public class ArmstrongNumber {
 		}
 		return _digits;
 	}
-	public boolean checkIfArmstrongNumber(int _value, boolean followIMRequirement)
+	public void checkIfArmstrongNumber(int _value)
 	{
 		separateDigits(_value);			   // Step 1 separate all digits, digits are stored in a stack
 		// if True power = 3 else power = digitLength
-		int power = followIMRequirement ? 3:findOrderLength();//3  // Step 2 find digit length (switch to 3 if required), for flexibility based on google's definition of Armstrong number, power = to the total length of digit
+		int power = 3;			//step 2
 		int finalValue = 0;				   // final value
 
 		separatedDigitsList = orderDigits(digitStack); // extra step to reorder all digits ( Debugging purposes)
@@ -86,17 +86,16 @@ public class ArmstrongNumber {
 		{
 			finalValue += separatedDigitsList.get(i);
 		}
-		String based = followIMRequirement ? "Requirement (digit^3)":"Wolfgram rule (digit ^ digit length)";
-		System.out.println("Checking if the number is an Armstrong number based on "+based);
+
 		System.out.println("initial value: "+_value + " final value: "+finalValue);
 		// step 5 determine if final value is same as initial value
 		if(finalValue == _value) {
 			System.out.println("It is an Armstrong Number");
-		return true;
+
 		}
 		else {
 			System.out.println("It is not an Armstrong Number");
-		return false;
+
 	}
 		}
 }

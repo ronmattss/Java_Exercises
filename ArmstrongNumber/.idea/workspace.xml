@@ -21,18 +21,19 @@
   <component name="ChangeListManager">
     <list default="true" id="1d69d2ef-9d07-40cc-9b37-8aa6cf0e9846" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/SchoolExercises.iml" beforeDir="false" afterPath="$PROJECT_DIR$/SchoolExercises.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/ArmstrongNumberTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/bin/exercise1/ArmstrongNumberTest.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/ProgramClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/models/ArmstrongNumberClass.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/ArmstrongNumberTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise1/ArmstrongNumberTest.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/models/ArmstrongNumberClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/exercise1/models/ArmstrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/exercise1/ArmstrongNumberTest.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/exercise1/InvalidInputException.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/exercise1/Main.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/exercise1/models/ArmstrongNumber.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercise1/ArmstrongNumberTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercise1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labexercise1/Main.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/exercise1/models/ArmstrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labexercise1/models/ArmstrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$ClearClicked.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$ClearClicked.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$EqualsClicked.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$EqualsClicked.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$NumberBtnClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$NumberBtnClick.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/Main.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/helpers/Postfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/helpers/Postfix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/src/Calculator.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/src/Calculator.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/src/com/shadedgames/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/src/com/shadedgames/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/src/com/shadedgames/helpers/OperationHelper.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/src/com/shadedgames/helpers/Postfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/src/com/shadedgames/helpers/Postfix.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -57,7 +58,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../scical" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Random" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -72,7 +73,7 @@
       </method>
     </configuration>
     <configuration name="main" type="Application" factoryName="Application">
-      <option name="MAIN_CLASS_NAME" value="exercise1.Main" />
+      <option name="MAIN_CLASS_NAME" value="labexercise1.Main" />
       <module name="SchoolExercises" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -125,45 +126,49 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="755" y="258" key="#xdebugger.XInspectDialog/0.0.1680.1010@0.0.1680.1010" timestamp="1606966517380" />
-    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1606972490429">
+    <state x="620" y="260" key="FileChooserDialogImpl" timestamp="1606992828460">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1606972490429" />
-    <state width="1637" height="245" key="GridCell.Tab.0.bottom" timestamp="1606975278669">
+    <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1606992828460" />
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="245" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1606975278669" />
-    <state width="1637" height="245" key="GridCell.Tab.0.center" timestamp="1606975278669">
+    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="245" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1606975278669" />
-    <state width="1637" height="245" key="GridCell.Tab.0.left" timestamp="1606975278669">
+    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="245" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1606975278669" />
-    <state width="1637" height="245" key="GridCell.Tab.0.right" timestamp="1606975278669">
+    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="245" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1606975278669" />
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1606972072251">
+    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1606994277293">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1606972072251" />
-    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1606972072251">
+    <state width="1637" height="336" key="GridCell.Tab.1.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277293" />
+    <state width="1637" height="336" key="GridCell.Tab.1.center" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1606972072251" />
-    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1606972072251">
+    <state width="1637" height="336" key="GridCell.Tab.1.center/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.1.left" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1606972072251" />
-    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1606972072251">
+    <state width="1637" height="336" key="GridCell.Tab.1.left/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="336" key="GridCell.Tab.1.right" timestamp="1606994277292">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1606972072251" />
+    <state width="1637" height="336" key="GridCell.Tab.1.right/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
     <state x="544" y="397" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD" timestamp="1606962218508">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="544" y="397" key="com.intellij.jarRepository.RepositoryAttachDialog-DOWNLOAD/0.0.1680.1010@0.0.1680.1010" timestamp="1606962218508" />
+    <state x="222" y="125" key="new project wizard" timestamp="1606990109855">
+      <screen x="0" y="0" width="1680" height="1010" />
+    </state>
+    <state x="222" y="125" key="new project wizard/0.0.1680.1010@0.0.1680.1010" timestamp="1606990109855" />
   </component>
 </project>

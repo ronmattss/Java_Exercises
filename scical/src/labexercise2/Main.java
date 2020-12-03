@@ -1,6 +1,6 @@
-package com.shadedgames;
+package labexercise2;
 
-import com.shadedgames.helpers.Postfix;
+import labexercise2.helpers.Postfix;
 
 import java.util.*;
 
@@ -29,7 +29,7 @@ public class Main {
                 System.out.print("Enter Number of Inputs: ");
                 inputLength = input.nextInt();
                 if (inputLength < 2|| inputLength >10) {
-                    throw new Exception("Input length must be greater than 1");
+                    throw new Exception("Input length must be greater than 1 or less than equal 10");
                 } else {
 
                     for (int i = 0; i < inputLength; i++) {
@@ -44,7 +44,7 @@ public class Main {
                         if (i != inputLength - 1) {
                             System.out.print("Enter Expression: ");
                             stream = input.next();
-                            if (stream.equalsIgnoreCase("^") || stream.equalsIgnoreCase("+") || stream.equalsIgnoreCase("-") || stream.equalsIgnoreCase("*") || stream.equalsIgnoreCase("/")) {
+                            if (stream.equalsIgnoreCase("+") || stream.equalsIgnoreCase("-") || stream.equalsIgnoreCase("*") || stream.equalsIgnoreCase("/")) {
                                 expression.add(stream);
                             }
                             else
@@ -55,7 +55,7 @@ public class Main {
                     }
                 }
             } catch (Exception e) {
-                System.out.println("Invalid Input");
+                System.out.println(e.getMessage());
                 break;
             }
             System.out.println("Result: "+expressionSolver.evaluateObjectList(expression));
@@ -69,29 +69,6 @@ public class Main {
         } while (flag);
         input.close();
 
-       /* System.out.println("Enter an Expression: ");
-        Scanner sc = new Scanner(System.in);
-        boolean choice = true;
-        while(choice) {
-            // postfix class has the stack inplementation
-            Postfix pf = new Postfix();
-            String s = sc.nextLine();
-
-            //	System.out.println(pf.infixToPostfix(s));
-            System.out.println(pf.evaluate(s));
-
-            System.out.println("\nAgain (y/n): ");
-
-            String a = sc.next();
-
-            if(a.equalsIgnoreCase("y"))
-                choice = true;
-            else
-                choice = false;
-
-        }
-        sc.close();
-    }*/
     }
 
     static String num(int value) {
