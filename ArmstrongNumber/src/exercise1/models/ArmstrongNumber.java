@@ -2,24 +2,23 @@ package exercise1.models;
 
 import java.util.*;
 
-public class ArmstrongNumberClass {
+public class ArmstrongNumber {
 	
 	// Singleton Class
 	// So that we don't need to create a new object
-	private static ArmstrongNumberClass instance = null;
+	private static ArmstrongNumber instance = null;
 	Stack<Integer> digitStack = new Stack<Integer>();
 	ArrayList<Integer> separatedDigitsList = new ArrayList<Integer>();
 	
-	private ArmstrongNumberClass() {}
-	
-	
+
 	// Using Singleton Pattern
-	// this is here so that we can return the instance of this class without  creating a new instance
-	public static ArmstrongNumberClass getInstance()
+	// Using a Singleton Pattern so that we do not need to create an instance of this class
+	private ArmstrongNumber() {}	// Private Constructor
+	public static ArmstrongNumber getInstance()
 	{
 		if(instance == null)
 		{
-			instance = new ArmstrongNumberClass();
+			instance = new ArmstrongNumber();
 		}
 		return instance;
 	}
@@ -34,34 +33,31 @@ public class ArmstrongNumberClass {
 	 *
 	 * */
 
-	// this function just returns the value of a given digit
+
 	private int getDigit(int _value)
 	{
 		return _value % 10;
-	}
+	}     // this function just returns the value of a given digit
 
-	//
+	private int findOrderLength()
+	{
+		return digitStack.size();
+	}	// get length of the digit
+
+	// manual separation of Digits
 	private void separateDigits(int _value)
 	{
 		int value = _value;
 		while(value>0)
-		{
+		{	// add it to the stack
 			digitStack.add(getDigit(value));
 			value = value/10;
 		}
 		System.out.println();
 	}
-	
-	
-	private int findOrderLength()
-	{
-		return digitStack.size();
-	}
-	
-	
+
 	// Why is there a Stack?
 	// to reorder the digits to it's original order
-	// since 
 	private ArrayList<Integer> orderDigits(Stack<Integer> _digitStack)
 	{
 		ArrayList<Integer> _digits = new ArrayList<Integer>();
@@ -71,14 +67,14 @@ public class ArmstrongNumberClass {
 		}
 		return _digits;
 	}
-	
-	public boolean checkIfArmstrongNumber(int _value)
+	public boolean checkIfArmstrongNumber(int _value, boolean followIMRequirement)
 	{
-		separateDigits(_value);			// Step 1 separate all digits, digits are stored in a stack
-		int power = findOrderLength();//3  // Step 2 find digit length (switch to 3 if required), for flexibility based on google's definition of Armstrong number, power = to the total length of digit
-		int finalValue = 0;				// final value
+		separateDigits(_value);			   // Step 1 separate all digits, digits are stored in a stack
+		// if True power = 3 else power = digitLength
+		int power = followIMRequirement ? 3:findOrderLength();//3  // Step 2 find digit length (switch to 3 if required), for flexibility based on google's definition of Armstrong number, power = to the total length of digit
+		int finalValue = 0;				   // final value
 
-		separatedDigitsList = orderDigits(digitStack); // extra step to reorder all digits
+		separatedDigitsList = orderDigits(digitStack); // extra step to reorder all digits ( Debugging purposes)
 		//Step 3 raised each digit by power
 		for(int i =0; i<separatedDigitsList.size();i++)
 		{
@@ -90,8 +86,9 @@ public class ArmstrongNumberClass {
 		{
 			finalValue += separatedDigitsList.get(i);
 		}
-		System.out.println("initial value: "+_value);
-		System.out.println("final value: "+finalValue);
+		String based = followIMRequirement ? "Requirement (digit^3)":"Wolfgram rule (digit ^ digit length)";
+		System.out.println("Checking if the number is an Armstrong number based on "+based);
+		System.out.println("initial value: "+_value + " final value: "+finalValue);
 		// step 5 determine if final value is same as initial value
 		if(finalValue == _value) {
 			System.out.println("It is an Armstrong Number");
@@ -102,20 +99,4 @@ public class ArmstrongNumberClass {
 		return false;
 	}
 		}
-	
-	
-	// Algorithm
-	/*
-	 * ArmstrongNumberClass
-	 * 
-    Find the total order(number of digits) of the given number.
-    For each digit d, find d raised to the power of o where o is the order calculated in Step 1.
-    Compare sum of all such values with the given number.Return true if equal,false otherwise.
-
-	 * 
-	 * 
-	 * */
-	
-	
-
 }
