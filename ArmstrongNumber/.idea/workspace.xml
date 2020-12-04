@@ -21,20 +21,13 @@
   <component name="ChangeListManager">
     <list default="true" id="1d69d2ef-9d07-40cc-9b37-8aa6cf0e9846" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/ArmstrongNumberTest.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/InvalidInputException.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/Main.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/exercise1/models/ArmstrongNumber.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/ArmstrongNumberTest.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labexercise1/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/exercise1/models/ArmstrongNumber.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/labexercise1/models/ArmstrongNumber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/bin/.gitignore" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$ClearClicked.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$ClearClicked.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$EqualsClicked.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$EqualsClicked.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$NumberBtnClick.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator$NumberBtnClick.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/Calculator.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/Calculator.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/Main.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/helpers/Postfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/com/shadedgames/helpers/Postfix.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../scical/src/com/shadedgames/helpers/Postfix.java" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/src/com/shadedgames/helpers/Postfix.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/labexercise2/Main.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/labexercise2/Main.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../scical/out/production/scical/labexercise2/helpers/Postfix.class" beforeDir="false" afterPath="$PROJECT_DIR$/../scical/out/production/scical/labexercise2/helpers/Postfix.class" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -58,7 +51,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../Random" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager">
     <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
@@ -130,22 +123,22 @@
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
     <state x="620" y="260" key="FileChooserDialogImpl/0.0.1680.1010@0.0.1680.1010" timestamp="1606992828460" />
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom" timestamp="1606994277292">
+    <state width="1637" height="245" key="GridCell.Tab.0.bottom" timestamp="1607000391139">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
-    <state width="1637" height="336" key="GridCell.Tab.0.center" timestamp="1606994277292">
+    <state width="1637" height="245" key="GridCell.Tab.0.bottom/0.0.1680.1010@0.0.1680.1010" timestamp="1607000391139" />
+    <state width="1637" height="245" key="GridCell.Tab.0.center" timestamp="1607000391139">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
-    <state width="1637" height="336" key="GridCell.Tab.0.left" timestamp="1606994277292">
+    <state width="1637" height="245" key="GridCell.Tab.0.center/0.0.1680.1010@0.0.1680.1010" timestamp="1607000391139" />
+    <state width="1637" height="245" key="GridCell.Tab.0.left" timestamp="1607000391139">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
-    <state width="1637" height="336" key="GridCell.Tab.0.right" timestamp="1606994277292">
+    <state width="1637" height="245" key="GridCell.Tab.0.left/0.0.1680.1010@0.0.1680.1010" timestamp="1607000391139" />
+    <state width="1637" height="245" key="GridCell.Tab.0.right" timestamp="1607000391139">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
-    <state width="1637" height="336" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1606994277292" />
+    <state width="1637" height="245" key="GridCell.Tab.0.right/0.0.1680.1010@0.0.1680.1010" timestamp="1607000391139" />
     <state width="1637" height="336" key="GridCell.Tab.1.bottom" timestamp="1606994277293">
       <screen x="0" y="0" width="1680" height="1010" />
     </state>
